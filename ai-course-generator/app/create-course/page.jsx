@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { HiClipboardDocumentCheck, HiLightBulb, HiMiniSquares2X2 } from 'react-icons/hi2'
 import SelectCategory from './_components/SelectCategory'
 import TopicDescription from './_components/TopicDescription'
+import SelectOption from './_components/SelectOption'
 
 function CreateCourse() {
   const StepperOptions = [
@@ -50,16 +51,18 @@ const [activeIndex, setActiveIndex] = useState(0);
       
       {/* Component */}
         {activeIndex==0?<SelectCategory/>:
-        activeIndex==1?<TopicDescription/>: null}
+        activeIndex==1?<TopicDescription/>: 
+        <SelectOption/>}
 
       {/* Next Previous Button */}
-            <div className='flex justify-between mt-10'>
+            <div className='flex justify-between mt-10 border-gray-300'>
               <Button disabled={activeIndex==0} 
               variant='outline'
               onClick={()=>setActiveIndex(activeIndex-1)}>Previous</Button>
               {activeIndex<2&& <Button onClick={()=>setActiveIndex(activeIndex+1)}>Next</Button>}
               {activeIndex==2&& <Button onClick={()=>setActiveIndex(activeIndex+1)}>Generate Course Layout</Button>}
             </div>
+            
       </div>
     </div>
   ) 
