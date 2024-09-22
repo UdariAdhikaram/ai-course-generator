@@ -4,6 +4,7 @@
 
 :root {
   --foreground-rgb: 0, 0 ,0;
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -88,4 +89,18 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+
 }
+
+.border {
+  border-width: 2px;
+}
+
+.border-black {
+  border-color: black;
+}
+
+.border-gray-300 {
+  border-color: #D1D5DB; /* Light gray for unclicked state */
+}
+
