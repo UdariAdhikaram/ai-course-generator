@@ -69,7 +69,7 @@ const handleInputChange=(fieldName,value)=>{
                 </div>
                 <div >
                     <label className=''>📖 No of Chapters</label>
-                    <Input type="number" className="h-14 text-lg"
+                    <Input type="number" className="h-9 text-lg"
                     onChange={(event)=>handleInputChange('noOfChapter',event.target.value)}
                     defaultValue={userCourseInput.noOfChapter}/>
                     </div>
