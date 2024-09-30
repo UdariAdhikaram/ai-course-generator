@@ -6,6 +6,8 @@ import SelectCategory from './_components/SelectCategory'
 import TopicDescription from './_components/TopicDescription'
 import SelectOption from './_components/SelectOption'
 import { UserInputContext } from '@/app/_context/UserinputContext'
+import { GenerateCourseLayout_AI } from '@/configs/AiModel'
+import LoadingDialog from './_components/LoadingDialog'
 
 function CreateCourse() {
   const StepperOptions = [
@@ -105,8 +107,8 @@ return (
               {activeIndex<2&& <Button disabled={checkStatus()} onClick={()=>setActiveIndex(activeIndex+1)}>Next</Button>}
               {activeIndex==2&& <Button disabled={checkStatus()} onClick={()=>GenerateCourseLayout()}>Generate Course Layout</Button>}
             </div>
-            
       </div>
+      <LoadingDialog loading={loading}/>
     </div>
   ) 
 }
